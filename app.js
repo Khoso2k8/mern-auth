@@ -6,7 +6,12 @@ const userRouter = require('./routes/userRoute');
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://mern-auth-wak.vercel.app',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());
