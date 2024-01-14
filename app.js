@@ -5,11 +5,8 @@ const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/userRoute');
 
 const app = express();
-const corsOptions = {
-  credentials: true,
-  origin: ['https://mern-auth-wak.vercel.app/', 'http://localhost:5173'],
-};
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 app.use(cookieParser());
 app.use(express.json());
